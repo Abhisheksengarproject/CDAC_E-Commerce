@@ -11,8 +11,8 @@ function App() {
       <Navigation />
       <div>
         {/* <HomePage /> */}
-        <Product />
-        {/* <ProductDetails /> */}
+        {/* <Product /> */}
+        <ProductDetails />
       </div>
       <Footer />
     </div>
