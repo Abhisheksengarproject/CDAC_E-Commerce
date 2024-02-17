@@ -7,7 +7,8 @@ import Grid from "@mui/material/Grid";
 import ProductReviewCard from "./ProductReviewCard";
 import Box from "@mui/system/Box";
 import { LinearProgress } from "@mui/material";
-
+import {mens_kurta} from "../../../Data/mens_kurta";
+import HomeSectionCard from "../HomeSectionCard/HomeSectionCard"
 const product = {
   name: "Basic Tee 6-Pack",
   price: "$192",
@@ -375,7 +376,13 @@ export default function ProductDetails() {
             </Grid>
           </div>
         </section>
-        
+        {/* Similar products */}
+        <section className="pt-10">
+          <h1 className="py-5 text-xl font-bold">Similar Products</h1>
+          <div className="flex flex-wrap space-y-5">
+            {mens_kurta.map((item) => <HomeSectionCard product={item}/>)}
+          </div>
+        </section>
       </div>
     </div>
   );
