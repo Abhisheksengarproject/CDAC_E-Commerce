@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StarIcon } from "@heroicons/react/20/solid";
+import { useNavigate } from "react-router-dom";
 import { RadioGroup } from "@headlessui/react";
 import Rating from "@mui/material/Rating";
 import Button from "@mui/material/Button";
@@ -7,8 +7,8 @@ import Grid from "@mui/material/Grid";
 import ProductReviewCard from "./ProductReviewCard";
 import Box from "@mui/system/Box";
 import { LinearProgress } from "@mui/material";
-import {mens_kurta} from "../../../Data/mens_kurta";
-import HomeSectionCard from "../HomeSectionCard/HomeSectionCard"
+import { mens_kurta } from "../../../Data/mens_kurta";
+import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 const product = {
   name: "Basic Tee 6-Pack",
   price: "$192",
@@ -65,7 +65,10 @@ function classNames(...classes) {
 export default function ProductDetails() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
-
+  const navigate = useNavigate();
+  const handleAddToCart= () =>{
+    navigate("/cart")
+  }
   return (
     <div className="bg-white lg:px-20">
       <div className="pt-6">
@@ -150,8 +153,8 @@ export default function ProductDetails() {
                 <p className="text-green-600 font-semibold">5% off</p>
               </div>
               {/* Reviews */}
-              <div className="mt-1">
-                <div className="flex items-center space-x-3">
+              <div>
+                <div className="flex items-center space-x-5">
                   <Rating name="read-only" value={5.5} readOnly />
                   <p className="opacity-50 text-sm mt-3">56540 Ratings</p>
                   <p className="ml-3 text-sm font-medium mt-3 text-indigo-600 hover:text-indigo-500">
@@ -160,17 +163,19 @@ export default function ProductDetails() {
                 </div>
               </div>
 
-              <form className="mt-10">
+              <form className="mt-4">
                 {/* Sizes */}
-                <div className="mt-10">
+                <div className="mt-2">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-medium text-gray-900">Size</h3>
+                    <h3 className="text-lg text-bold font-semibold font-medium text-gray-900">
+                      Size
+                    </h3>
                   </div>
 
                   <RadioGroup
                     value={selectedSize}
                     onChange={setSelectedSize}
-                    className="mt-4"
+                    className="mt-2 mb-4"
                   >
                     <RadioGroup.Label className="sr-only">
                       Choose a size
@@ -236,6 +241,7 @@ export default function ProductDetails() {
                   </RadioGroup>
                 </div>
                 <Button
+                onClick={handleAddToCart}
                   variant="contained"
                   sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd" }}
                 >
@@ -284,19 +290,19 @@ export default function ProductDetails() {
         </section>
         {/* ratings and reviews */}
         <section>
-          <h1 className="font-semibold text-lg pb-4">
+          <h1 className="font-semibold text-lg pb-4 ml-2">
             Recent Review and Rating
           </h1>
-          <div className="border p-5">
+          <div className="border rounded-md p-4 m-2">
             <Grid container spacing={7}>
-              <Grid item xs={7}>
-                <div className="space-y-5">
+              <Grid item xs={6}>
+                <div className="space-y-3">
                   {[1, 1, 1].map((item) => (
                     <ProductReviewCard />
                   ))}
                 </div>
               </Grid>
-              <Grid item xs={5}>
+              <Grid item xs={6}>
                 <h1 className="text-xl font-semibold pb-1">Product Ratings</h1>
                 <div className="flex items-center space-x-3">
                   <Rating value={4.6} precision={0.5} readOnly />
@@ -377,12 +383,18 @@ export default function ProductDetails() {
           </div>
         </section>
         {/* Similar products */}
-        <section className="pt-10">
-          <h1 className="py-5 text-xl font-bold">Similar Products</h1>
-          <div className="flex flex-wrap space-y-5">
-            {mens_kurta.map((item) => <HomeSectionCard product={item}/>)}
+        <div className="p-2">
+          <h1 className="py-4 text-xl font-bold ml-3">Similar Products</h1>
+          <div className="border rounded-md">
+            <section className="pt-10">
+              <div className="flex flex-wrap  items-center justify-center space-y-2 space-x-6">
+                {mens_kurta.map((item) => (
+                  <HomeSectionCard product={item} />
+                ))}
+              </div>
+            </section>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   );

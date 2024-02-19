@@ -4,13 +4,13 @@ import Button from "@mui/material/Button";
 
 const Cart = () => {
   return (
-    <div>
+    <div className="p-2">
       <div className="lg:grid grid-cols-3 lg:px-16 relative ">
         <div className="col-span-2">
           {[1, 1, 1, 1].map((item)=><CartItem />)}
         </div>
-        <div className="px-5 sticky top-0 h-[100vh] mt-1 lg:mt-0 ">
-          <div className="border rounded-lg  p-3 w-full sm:w-full">
+        <div className="px-5 sticky top-0 h-[100vh] mt-3 lg:mt-0 ">
+          <div className="border rounded-md rgb(255, 255, 255) p-3 w-full sm:w-full ">
             <p className="uppercase font-bold opacity-60">PRICE DETAILS</p>
             <hr />
             <div className="space-y-3 font-semibold mb-4">

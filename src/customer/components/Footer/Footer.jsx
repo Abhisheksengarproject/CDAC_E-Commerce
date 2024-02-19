@@ -77,11 +77,11 @@ const Footer = () => {
             Contact us
           </Typography>
           <div>
-            <MDBIcon color="secondary" icon="home" className="me-3 mb-4" />
-            Plot No. 6 & 7, Hardware Park, Hyderabad
+            <MDBIcon color="secondary" icon="home" className="me-3" />
+            Plot No. 6 & 7, Hardware Park,<br /> Hyderabad
           </div>
           <div>
-            <MDBIcon color="secondary" icon="envelope" className="me-3 mb-4" />
+            <MDBIcon color="secondary" icon="envelope" className="me-3 mt-4 mb-4" />
             cdac@gmail.com
           </div>
           <div>

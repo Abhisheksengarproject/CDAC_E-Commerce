@@ -18,11 +18,11 @@ const HomeSectionCarousel = ({data, sectionName}) => {
     ));
 
     return (
-        <div className='border'>
-            <h2 className='text-2xl font font-extrabold text-gray-800 py-5'>
+        <div className='border rounded-lg'>
+            <h2 className='text-2xl font font-extrabold text-gray-800 py-4 ml-10'>
                 {sectionName}
             </h2>
-            <div className='relative p-5'>
+            <div className='relative p-3 '>
                 <AliceCarousel
                     items={items}
                     responsive={responsive}

@@ -11,14 +11,14 @@ const ProductReviewCard = () => {
           <Avatar sx={{ width: 56, height: 56, bgcolor: "#9155fd" }}></Avatar>
         </Grid>
         <Grid item xs={9}>
-          <div className="space-y-2">
+          <div className="space-y-2 space-x-2">
             <div>
-              <p className="font-semibold text-lg">Ram</p>
-              <p className="opacity-70">February 17, 2024</p>
+              <p className="font-semibold text-lg ml-3">Ram</p>
+              <p className="opacity-70 ml-3">February 17, 2024</p>
             </div>
           </div>
-          <Rating value={4.5} name="half-rating" readOnly precision={0.5}/>
-          <p>
+          <Rating className="ml-3" value={4.5} name="half-rating" readOnly precision={0.5}/>
+          <p className="ml-3">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.{" "}
           </p>
         </Grid>

@@ -6,7 +6,7 @@ import CartItem from '../Cart/CartItem';
 const OrderSummary = () => {
   return (
     <div>
-      <div className='p-5 shadow-lg rounded-md border'>
+      <div className='p-5 shadow-lg rounded-md border mb-4'>
         <AddressCard />
       </div>
       <div>
@@ -14,8 +14,8 @@ const OrderSummary = () => {
         <div className="col-span-2">
           {[1, 1, 1, 1].map((item)=><CartItem />)}
         </div>
-        <div className="px-5 sticky top-0 h-[100vh] mt-1 lg:mt-0 ">
-          <div className="border rounded-lg  p-3 w-full sm:w-full">
+        <div className="px-5 sticky top-0 h-[100vh] w-full lg:mt-0  mt-3">
+          <div className="border rounded-lg  p-3 w-full sm:w-full mt-3">
             <p className="uppercase font-bold opacity-60">PRICE DETAILS</p>
             <hr />
             <div className="space-y-3 font-semibold mb-4">
